@@ -1,0 +1,91 @@
+[versions]
+kotlin = "2.2.21"
+agp = "8.13.1"
+
+# Compose
+compose-bom = "2025.12.00"        # latest Compose BOM
+material3 = "1.4.0"               # actual Material3 version that exists
+
+# Core Android
+core-ktx = "1.13.1"
+activity-compose = "1.12.1"
+lifecycle = "2.7.0"
+
+# DI
+hilt = "2.57.2"                   # latest stable Dagger Hilt
+androidxHilt = "1.3.0"            # androidx.hilt:* (navigation, work)
+
+# Networking
+retrofit = "3.0.0"                # Retrofit 3, but still group `com.squareup.retrofit2`
+okhttp = "5.3.2"
+serialization = "1.9.0"
+
+# Persistence / paging / work
+room = "2.7.1"
+paging = "3.3.6"
+work = "2.10.1"
+
+# Test
+junit = "4.13.2"
+mockk = "1.14.6"
+coroutines-test = "1.10.2"
+androidx-junit = "1.2.1"
+espresso-core = "3.6.1"
+
+[plugins]
+android-application = { id = "com.android.application",                version.ref = "agp" }
+kotlin-android       = { id = "org.jetbrains.kotlin.android",          version.ref = "kotlin" }
+kotlin-compose       = { id = "org.jetbrains.kotlin.plugin.compose",   version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+hilt                 = { id = "com.google.dagger.hilt.android",        version.ref = "hilt" }
+ksp                  = { id = "com.google.devtools.ksp",               version = "2.2.21-2.0.4" }
+
+[libraries]
+# AndroidX core / lifecycle / activity
+androidx-core-ktx              = { group = "androidx.core",      name = "core-ktx",              version.ref = "core-ktx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-activity-compose      = { group = "androidx.activity",  name = "activity-compose",      version.ref = "activity-compose" }
+
+# Compose
+androidx-compose-bom                = { group = "androidx.compose",         name = "compose-bom",          version.ref = "compose-bom" }
+androidx-compose-ui                 = { group = "androidx.compose.ui",      name = "ui" }
+androidx-compose-ui-graphics        = { group = "androidx.compose.ui",      name = "ui-graphics" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui",      name = "ui-tooling-preview" }
+androidx-compose-ui-tooling         = { group = "androidx.compose.ui",      name = "ui-tooling" }
+androidx-compose-ui-test-junit4     = { group = "androidx.compose.ui",      name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest   = { group = "androidx.compose.ui",      name = "ui-test-manifest" }
+androidx-compose-material3          = { group = "androidx.compose.material3", name = "material3",          version.ref = "material3" }
+
+# Hilt (Dagger)
+hilt-android   = { group = "com.google.dagger", name = "hilt-android",  version.ref = "hilt" }
+hilt-compiler  = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# AndroidX Hilt (navigation + work)
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
+work-hilt               = { group = "androidx.hilt", name = "hilt-work",               version.ref = "androidxHilt" }
+
+# Retrofit / OkHttp / serialization
+retrofit-core                  = { group = "com.squareup.retrofit2", name = "retrofit",                        version.ref = "retrofit" }
+retrofit-kotlinx-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+okhttp-logging                 = { group = "com.squareup.okhttp3",   name = "logging-interceptor",             version.ref = "okhttp" }
+kotlinx-serialization-json     = { group = "org.jetbrains.kotlinx",  name = "kotlinx-serialization-json",      version.ref = "serialization" }
+
+# Room
+room-runtime  = { group = "androidx.room", name = "room-runtime",  version.ref = "room" }
+room-ktx      = { group = "androidx.room", name = "room-ktx",      version.ref = "room" }
+room-paging   = { group = "androidx.room", name = "room-paging",   version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# Paging
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
+paging-compose = { group = "androidx.paging", name = "paging-compose",  version.ref = "paging" }
+
+# WorkManager
+work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
+
+# Tests
+junit                  = { group = "junit",                 name = "junit",                  version.ref = "junit" }
+mockk                  = { group = "io.mockk",              name = "mockk",                  version.ref = "mockk" }
+coroutines-test        = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines-test" }
+androidx-junit         = { group = "androidx.test.ext",     name = "junit",                  version = "androidx-junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core",        version = "espresso-core" }
