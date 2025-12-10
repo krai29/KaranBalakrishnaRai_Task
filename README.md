@@ -4,6 +4,12 @@ A small stocks portfolio demo app that shows a user's holdings, summary profit a
 
 ---
 
+## Screenshots
+
+![Portfolio screen](screenshots/KaranScreenshot2.png)
+![Portfolio screen](screenshots/KaranScreenshot1.png)
+
+
 ## Tech Stack
 
 **UI**

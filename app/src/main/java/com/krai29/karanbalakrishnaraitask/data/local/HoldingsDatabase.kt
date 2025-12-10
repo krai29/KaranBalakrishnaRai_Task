@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
     version = 1,
     exportSchema = true
 )
-abstract class PortfolioDatabase : RoomDatabase(){
+abstract class HoldingsDatabase : RoomDatabase(){
 
+    abstract fun holdingDao(): HoldingDao
 }

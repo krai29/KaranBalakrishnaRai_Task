@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.ui.theme
+package com.krai29.karanbalakrishnaraitask.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.util
+package com.krai29.karanbalakrishnaraitask.core
 
 import android.content.Context
 import android.net.ConnectivityManager

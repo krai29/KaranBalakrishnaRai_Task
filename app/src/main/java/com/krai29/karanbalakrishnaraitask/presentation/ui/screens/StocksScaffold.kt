@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.ui.screens
+package com.krai29.karanbalakrishnaraitask.presentation.ui.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,11 +43,11 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.krai29.karanbalakrishnaraitask.presentation.model.HoldingUiModel
 import com.krai29.karanbalakrishnaraitask.presentation.model.PortfolioUiState
 import com.krai29.karanbalakrishnaraitask.presentation.viewmodel.PortfolioViewModel
-import com.krai29.karanbalakrishnaraitask.ui.components.BottomNavItem
-import com.krai29.karanbalakrishnaraitask.ui.components.BottomNavigationBar
-import com.krai29.karanbalakrishnaraitask.ui.components.HoldingRow
-import com.krai29.karanbalakrishnaraitask.ui.components.LoadingView
-import com.krai29.karanbalakrishnaraitask.ui.components.PortfolioSummaryBottomSheet
+import com.krai29.karanbalakrishnaraitask.presentation.ui.components.BottomNavItem
+import com.krai29.karanbalakrishnaraitask.presentation.ui.components.BottomNavigationBar
+import com.krai29.karanbalakrishnaraitask.presentation.ui.components.HoldingRow
+import com.krai29.karanbalakrishnaraitask.presentation.ui.components.LoadingView
+import com.krai29.karanbalakrishnaraitask.presentation.ui.components.PortfolioSummaryBottomSheet
 
 @Composable
 fun StocksScaffold(
@@ -56,7 +56,6 @@ fun StocksScaffold(
     val uiState by viewModel.uiState.collectAsState()
     val holdings = viewModel.holdingsPaging.collectAsLazyPagingItems()
 
-    // selected bottom nav item
     var selectedBottomItem by remember {
         mutableStateOf<BottomNavItem>(BottomNavItem.Portfolio)
     }
@@ -117,14 +116,14 @@ private fun PortfolioTopBar() {
             )
         },
         actions = {
-            IconButton(onClick = { /* sorting not needed for task */ }) {
+            IconButton(onClick = {  }) {
                 Icon(
                     imageVector = Icons.Outlined.SwapVert,
                     contentDescription = "Sort",
                     tint = Color.White
                 )
             }
-            IconButton(onClick = { /* search not needed for task */ }) {
+            IconButton(onClick = {  }) {
                 Icon(
                     imageVector = Icons.Outlined.Search,
                     contentDescription = "Search",
@@ -181,9 +180,7 @@ private fun PositionsPlaceholder() {
     }
 }
 
-/**
- * Content of the HOLDINGS tab.
- */
+
 @Composable
 private fun HoldingsTabContent(
     uiState: PortfolioUiState,
@@ -229,7 +226,6 @@ private fun HoldingsTabContent(
                         }
                     }
                 } else {
-                    // Normal list of holdings
                     items(
                         count = holdingsUi.itemCount,
                         key = { index -> holdingsUi[index]?.symbol ?: index }

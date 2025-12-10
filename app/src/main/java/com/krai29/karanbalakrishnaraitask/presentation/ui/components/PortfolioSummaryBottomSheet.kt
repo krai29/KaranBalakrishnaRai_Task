@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.ui.components
+package com.krai29.karanbalakrishnaraitask.presentation.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -49,19 +49,16 @@ fun PortfolioSummaryBottomSheet(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp)
         ) {
-            // Summary rows visible only when expanded
             AnimatedVisibility(visible = uiState.isSummaryExpanded) {
                 Column(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     SummarySheetRows(summary = summary)
 
-                    // Divider directly above Profit & Loss row
-                    Divider(modifier = Modifier.padding(top = 8.dp))
+                    HorizontalDivider(modifier = Modifier.padding(top = 8.dp))
                 }
             }
 
-            // Profit & Loss row itself
             Row(
                 modifier = Modifier
                     .fillMaxWidth()

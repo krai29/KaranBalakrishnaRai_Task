@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.ui.components
+package com.krai29.karanbalakrishnaraitask.presentation.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,22 +16,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.krai29.karanbalakrishnaraitask.presentation.model.HoldingUiModel
+import com.krai29.karanbalakrishnaraitask.presentation.ui.theme.labelColor
+import com.krai29.karanbalakrishnaraitask.presentation.ui.theme.lossColor
+import com.krai29.karanbalakrishnaraitask.presentation.ui.theme.profitColor
 
 @Composable
 fun HoldingRow(
     holding: HoldingUiModel,
     modifier: Modifier = Modifier
 ) {
-    val labelColor = Color(0xFF9E9E9E) 
-    val profitColor = Color(0xFF2E7D32)
-    val lossColor = Color(0xFFC62828)
 
     Column(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {
-        // First line: symbol and LTP
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -56,9 +55,8 @@ fun HoldingRow(
             }
         }
 
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
-        // Second line: NET QTY and P&L
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,

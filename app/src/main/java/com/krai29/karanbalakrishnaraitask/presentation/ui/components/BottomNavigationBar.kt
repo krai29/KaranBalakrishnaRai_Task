@@ -1,4 +1,4 @@
-package com.krai29.karanbalakrishnaraitask.ui.components
+package com.krai29.karanbalakrishnaraitask.presentation.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
